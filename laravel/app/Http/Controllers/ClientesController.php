@@ -12,6 +12,7 @@ class ClientesController extends Controller
 {
     public function getClientes()
     {
+        // funcion del getall
         $response_local = new \stdClass();
         $response_local->success = true;
         $response_local->data = Cliente::all();
