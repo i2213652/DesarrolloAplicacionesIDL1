@@ -52,4 +52,15 @@ class ClientesController extends Controller
         $response->success = true;
         return response()->json($response, 200);
     }
+
+    public function delete(Request $request, $id)
+    {
+
+        $response = new \stdClass();
+        $cliente = Cliente::find($id);
+        $cliente->delete();
+
+        $response->success = true;
+        return response()->json($response, 200);
+    }
 }
