@@ -64,6 +64,35 @@ class ClientesController extends Controller
         return response()->json($response, 200);
     }
 
+    public function patchUpdate(Request $request, $id)
+    {
+        $response = new \stdClass();
+
+        $cliente = Cliente::find($id);
+
+        if ($request->apellido_paterno != null) {
+            $cliente->apellido_paterno = $request->apellido_paterno;
+        }
+
+        if ($request->apellido_materno != null) {
+            $cliente->apellido_materno = $request->apellido_materno;
+        }
+
+        if ($request->nombres != null) {
+            $cliente->nombres = $request->nombres;
+        }
+
+        if ($request->expediente != null) {
+            $cliente->expediente = $request->expediente;
+        }
+
+        $cliente->save();
+
+        $response->data = $cliente;
+        $response->success = true;
+        return response()->json($response, 200);
+    }
+
     public function delete(Request $request, $id)
     {
 
