@@ -22,3 +22,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/clientes', [ClientesController::class, 'getAll']);
 Route::post('/clientes', [ClientesController::class, 'store']);
+Route::put('/clientes/{id}', [ClientesController::class, 'update']);

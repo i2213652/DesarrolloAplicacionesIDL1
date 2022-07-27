@@ -37,4 +37,19 @@ class ClientesController extends Controller
         $response->success = true;
         return response()->json($response, 200);
     }
+    public function update(Request $request, $id)
+    {
+        $response = new \stdClass();
+
+        $cliente = Cliente::find($id);
+        $cliente->apellido_paterno = $request->apellido_paterno;
+        $cliente->apellido_materno = $request->apellido_materno;
+        $cliente->nombres = $request->nombres;
+        $cliente->expediente = $request->expediente;
+        $cliente->save();
+
+        $response->data = $cliente;
+        $response->success = true;
+        return response()->json($response, 200);
+    }
 }
