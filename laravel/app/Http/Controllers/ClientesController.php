@@ -10,7 +10,7 @@ use stdClass;
 
 class ClientesController extends Controller
 {
-    public function getClientes()
+    public function getAll()
     {
         // funcion del getall
         $response_local = new \stdClass();
@@ -18,5 +18,23 @@ class ClientesController extends Controller
         $response_local->data = Cliente::all();
 
         return response()->json($response_local, 200);
+    }
+
+    public function store(Request $request)
+    {
+        $response = new \stdClass();
+
+        $cliente = new Cliente();
+
+        $cliente->apellido_paterno = $request->apellido_paterno;
+        $cliente->apellido_materno = $request->apellido_materno;
+        $cliente->nombres = $request->nombres;
+        $cliente->expediente = $request->expediente;
+
+        $cliente->save();
+
+        $response->data = $cliente;
+        $response->success = true;
+        return response()->json($response, 200);
     }
 }
