@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 19-07-2022 a las 03:59:03
+-- Tiempo de generación: 27-07-2022 a las 22:34:09
 -- Versión del servidor: 8.0.29
 -- Versión de PHP: 7.4.30
 
@@ -28,10 +28,10 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `clientes` (
-  `id` char(36) COLLATE utf8mb4_general_ci NOT NULL,
-  `apellido_paterno` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `apellido_materno` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `nombres` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `id` char(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `apellido_paterno` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `apellido_materno` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `nombres` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `expediente` int DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
@@ -44,7 +44,7 @@ CREATE TABLE `clientes` (
 
 INSERT INTO `clientes` (`id`, `apellido_paterno`, `apellido_materno`, `nombres`, `expediente`, `created_at`, `updated_at`, `deleted_at`) VALUES
 ('14551a09-0714-11ed-8df2-48ba4e4f382c', 'ROJAS', 'DELGADO', 'JEANPOOL DAVID', 2, '2022-07-19 03:36:34', '2022-07-19 03:36:34', NULL),
-('c32a6c58-0711-11ed-8df2-48ba4e4f382c', 'ROJAS', 'DELGADO', 'RICHTER DAVID', 1, '2022-07-19 03:19:15', '2022-07-19 03:19:15', NULL);
+('c32a6c58-0711-11ed-8df2-48ba4e4f382c', 'ROJAS', 'DELGADO', 'RICHTER DAVID', 8, '2022-07-19 03:19:15', '2022-07-28 03:30:43', NULL);
 
 --
 -- Índices para tablas volcadas
