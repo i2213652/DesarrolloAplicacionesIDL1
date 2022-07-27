@@ -20,6 +20,17 @@ class ClientesController extends Controller
         return response()->json($response_local, 200);
     }
 
+    public function getitem($id)
+    {
+        $response = new \stdClass();
+
+        $cliente = Cliente::find($id);
+
+        $response->data = $cliente;
+        $response->success = true;
+        return response()->json($response, 200);
+    }
+
     public function store(Request $request)
     {
         $response = new \stdClass();
